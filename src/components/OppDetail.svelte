@@ -1,0 +1,1 @@
+<p>opps details</p>
