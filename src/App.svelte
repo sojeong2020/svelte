@@ -3,7 +3,10 @@
 	import {link } from 'svelte-spa-router';
   import active from 'svelte-spa-router/active';
 
+  import {Button} from 'sveltestrap';
+
 	import Sidebar from './components/Sidebar.svelte';
+  import Navbar from './components/Navbar.svelte';
 	import Home from './components/Home.svelte';
 	import Profile from './components/Profile.svelte';
 	import Opps from './components/Opps.svelte';
@@ -27,7 +30,12 @@
 
 </script>
 
- 
+<Navbar>
+  <div slot="lang">
+    <Button>English</Button>
+    <Button>Welsh</Button>
+  </div>
+</Navbar>
 <Sidebar>
 
 	<span slot="sidebar">

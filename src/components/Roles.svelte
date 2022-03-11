@@ -14,7 +14,7 @@
   <Container>
       <Row>
           <Col xs={12} md={6}>
-  <Card class="mb-3">
+  <Card class="mb-3 mt-4">
     <CardHeader >
         
       <CardTitle >Basic Onboarding Roles</CardTitle>
@@ -42,7 +42,7 @@
 </Col>
 
   <Col xs={12} md={6}>
-  <Card class="mb-3">
+  <Card class="mb-3 mt-4" >
     <CardHeader>
         
       <CardTitle >Basic Onboarding Roles</CardTitle>

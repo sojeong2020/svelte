@@ -18,7 +18,7 @@
   <Container>
     <Row>
       <Col xs={12} md={4}>
-  <Card class="mb-3">
+  <Card class="mb-3 mt-4">
     <CardHeader>
       <CardTitle>HOSTEL PLACEMENTS</CardTitle>
     </CardHeader>
@@ -42,7 +42,7 @@
 </Col>
 
 <Col xs={12} md={4}>
-  <Card class="mb-3">
+  <Card class="mb-3 mt-4">
     <CardHeader>
       <CardTitle>HOSTEL PLACEMENTS</CardTitle>
     </CardHeader>
@@ -67,7 +67,7 @@
 </Col>
 
 <Col xs={12} md={4}>
-  <Card class="mb-3">
+  <Card class="mb-3 mt-4">
     <CardHeader>
       <CardTitle>HOSTEL PLACEMENTS</CardTitle>
     </CardHeader>
