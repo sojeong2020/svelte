@@ -1,7 +1,7 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import {link } from 'svelte-spa-router';
-    import active from 'svelte-spa-router/active';
+  import active from 'svelte-spa-router/active';
 
 	import Sidebar from './components/Sidebar.svelte';
 	import Home from './components/Home.svelte';

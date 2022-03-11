@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import {Form, FormGroup, Input, Label, Button,Container,Row,Col } from 'sveltestrap';
 
    
@@ -154,5 +154,10 @@
 </Container>
 
 <style>
+    .error{
+        font-weight: bold;
+        font-size: 12px;
+        color:red;
+    }
    
 </style>

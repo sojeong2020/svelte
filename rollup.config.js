@@ -5,6 +5,9 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 
+import postcss from 'rollup-plugin-postcss';
+
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -46,6 +49,9 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
+		// for FullCalendar
+        postcss(),
+
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
