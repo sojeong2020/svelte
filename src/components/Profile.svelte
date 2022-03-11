@@ -1,20 +1,57 @@
 <script lang="ts">
     import {Form, FormGroup, Input, Label, Button,Container,Row,Col } from 'sveltestrap';
 
-    let firstname;
-    let surname;
-    let mobile;
-    let email;
-    let date;
-    let gender;
+   
+    let profile = {firstname:'',surname:'',mobile:'', email:'', date:'', gender:'' }
+
+    let errors = {firstname:'',surname:'',mobile:'', email:''}
+
+    let valid = false;
 
    
     const handleSubmit =(e)=>{
      e.preventDefault()
-      const profile = {firstname,surname,mobile,email,date,gender}
-        console.log(profile)
 
+      valid = true;
+
+      //validation question- firstname
+      if(!profile.firstname.match(/^[A-Za-z]{2,16}$/)) {
+          valid = false;
+          errors.firstname = 'Firstname should be 2-16 characters and should not include any special character!'
+        }else {
+            errors.firstname = '';
+        }
+
+    //validation question- surname
+    if(!profile.surname.match(/^[A-Za-z]{2,16}$/)) {
+          valid = false;
+          errors.surname = 'Surname should be 2-16 characters and should not include any special character!'
+        }else {
+            errors.surname = '';
+        }
+
+    //validation question- mobile number
+    if(!profile.mobile.match(/^((\\+91-?)|0)?[0-9]{10}$/)) {
+          valid = false;
+          errors.mobile = 'It should be a valid mobile number:('
+        }else {
+            errors.mobile = '';
+        }
+    
+    //validation question- email address
+    if(!profile.email.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) {
+          valid = false;
+          errors.email = 'It should be a valid email address :('
+        }else {
+            errors.email = '';
+        }
+
+    //add new profile
+    if(valid){
+        console.log(profile,'new profile')
     }
+
+      }
   </script>
   
   <Container>
@@ -23,14 +60,14 @@
     <Row>
     <Col  xs={12} md={6}>
     <FormGroup>
-        <Label for="firstname">firstname {firstname}</Label>
+        <Label for="firstname">firstname</Label>
         <Input
           type="text"
           name="firstname"
           placeholder="First name"
-          required
-          bind:value={firstname}
+          bind:value={profile.firstname}
         />
+        <div class="error">{errors.firstname}</div>
     </FormGroup>
     </Col>
 
@@ -41,9 +78,10 @@
       type="text"
       name="surname"
       placeholder="Surname"
-      required
-      bind:value={surname}
+      bind:value={profile.surname}
     />
+    <div class="error">{errors.surname}</div>
+
     </FormGroup>
     </Col>
     </Row>
@@ -56,9 +94,10 @@
       type="text"
       name="mobilr"
       placeholder="mobile number"
-      required
-      bind:value={mobile}
+      bind:value={profile.mobile}
     />
+    <div class="error">{errors.mobile}</div>
+
     </FormGroup>
     </Col>
 
@@ -69,9 +108,10 @@
       type="email"
       name="email"
       placeholder="email address"
-      required
-      bind:value={email}
+      bind:value={profile.email}
     />
+    <div class="error">{errors.email}</div>
+
     </FormGroup>
     </Col>
     </Row>
@@ -84,7 +124,7 @@
       type="date"
       name="date"
       required
-      bind:value={date}
+      bind:value={profile.date}
     />
     </FormGroup>
     </Col>
@@ -96,7 +136,7 @@
     type="select" 
     name="gender"
     required
-    bind:value={gender}
+    bind:value={profile.gender}
     >
       <option>Female</option>
       <option>Male</option>
@@ -108,9 +148,7 @@
   <Button color="success">Submit</Button>
 
 </Form>
-<span>{firstname}</span><span>{surname}</span>
-<span>{mobile}</span><span>{email}</span>
-<span>{date}</span><span>{gender}</span>
+
 
 
 </Container>
