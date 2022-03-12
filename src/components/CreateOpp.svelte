@@ -7,12 +7,17 @@
     const dispatch = createEventDispatcher();
 
     let newOpp={name:'', description:''}
+    let msg={msg:''}
 
 
     const submitHandler=()=>{
 
         let opp={...newOpp,id: Math.random()}
         console.log(opp,'opp!!!!')
+        if(opp){
+            msg.msg='Great, successfully added!'
+
+        }
 
         OppStore.update(currentOpps =>{
             return [opp, ...currentOpps]
@@ -35,4 +40,6 @@
         <input type="text" bind:value={newOpp.description} required> 
     </div>
     <Button>Create Opp</Button>
+    <p>{msg.msg}</p>
+
 </form>

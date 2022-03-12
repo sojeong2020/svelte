@@ -4,6 +4,8 @@
 
     export let opp;
 
+    
+
     const handleDelete=(id) => {
         OppStore.update(currentOpps=>{
             return currentOpps.filter(opp=>opp.id !== id)
@@ -15,5 +17,5 @@
     <h4>{opp.name}</h4>
     <p>{opp.description}</p>
 
-    <Button on:click={()=>handleDelete(opp.id)}>Delete</Button>
+    <Button info on:click={()=>handleDelete(opp.id)}>Delete</Button>
 </div>
