@@ -3,13 +3,12 @@
 	import {link } from 'svelte-spa-router';
   import active from 'svelte-spa-router/active';
 
-  import {Button} from 'sveltestrap';
-
-	import Sidebar from './components/Sidebar.svelte';
+  import Sidebar from './components/Sidebar.svelte';
   import Navbar from './components/Navbar.svelte';
 	import Home from './components/Home.svelte';
 	import Profile from './components/Profile.svelte';
 	import Opps from './components/Opps.svelte';
+  import CreateOpp from './components/CreateOpp.svelte';
 	import Roles from './components/Roles.svelte';
 	import Events from './components/Events.svelte';
 	import Calendar from './components/Calendar.svelte';
@@ -20,7 +19,8 @@
 	 const routes = {
     
 	'/profile':Profile,
-    '/opps' : Opps,
+  '/opps' : Opps,
+  '/createOpp': CreateOpp,
 	'/roles': Roles,
 	'/events': Events,
 	'/calendar': Calendar,
@@ -28,12 +28,20 @@
 
     };
 
+    const handleLocaleChange = e => {
+    e.preventDefault();
+    locale.set(e.target.value);
+  };
+
+
 </script>
 
 <Navbar>
   <div slot="lang">
-    <Button>English</Button>
-    <Button>Welsh</Button>
+    <select on:change={handleLocaleChange}>
+      <option value="en">English</option>
+      <option value="we">Welsh</option>
+    </select>
   </div>
 </Navbar>
 <Sidebar>
@@ -42,8 +50,9 @@
 		<div class="sidebar">
 	  <a href="/" class="active" use:link use:active>Home</a>
 	  <a href="/profile" class="active" use:link use:active>Profile</a>
-      <a href="/opps"  class="active" use:link use:active>Opportunities</a>
-	  <a href="/roles" class="active" use:link use:active>Roles</a>
+    <a href="/opps"  class="active" use:link use:active>Opportunities</a>
+    <a href="/createOpp"  class="active" use:link use:active>Create Opp</a>
+    <a href="/roles" class="active" use:link use:active>Roles</a>
 	  <a href="/events" class="active" use:link use:active>Events</a>
 	  <a href="/Calendar" class="active" use:link use:active>Calendar</a>
 	    </div>

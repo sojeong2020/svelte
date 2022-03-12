@@ -1,1 +1,14 @@
-<h2>List of Opportunities</h2>
+<script>
+    import OppStore from '../store/oppStore.js';
+    import OppDetail from './OppDetail.svelte';
+
+    let opps =[]
+</script>
+
+<div class="opp-list">
+    {#each $OppStore as opp (opp.id)}
+    <div>
+        <OppDetail {opp} />
+    </div>
+    {/each} 
+</div>
