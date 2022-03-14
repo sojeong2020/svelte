@@ -22,10 +22,12 @@
     <Row>
       <Col xs={12} md={4}>
   <Card class="mb-3 mt-4">
-    <CardHeader>
-      <CardTitle>{$_("events.one")}</CardTitle>
-    </CardHeader>
+    
     <CardBody>
+      <img class="card-img" src="images/dog.jpg" alt="dog" />
+      <CardText>
+      {$_("events.one")}
+      </CardText>
       <CardText>
         Is life a little boring? Fed up of the same old view out of the window?  It’s definitely time to try something new!  
 
@@ -46,10 +48,11 @@
 
 <Col xs={12} md={4}>
   <Card class="mb-3 mt-4">
-    <CardHeader>
-      <CardTitle>{$_("events.two")}</CardTitle>
-    </CardHeader>
     <CardBody>
+      <img class="card-img" src="images/cycling.jpg" alt="cycling" />
+      <CardText>
+        {$_("events.two")}
+      </CardText>
       <CardText>
         Is life a little boring? Fed up of the same old view out of the window?  It’s definitely time to try something new!  
 
@@ -71,10 +74,12 @@
 
 <Col xs={12} md={4}>
   <Card class="mb-3 mt-4">
-    <CardHeader>
-      <CardTitle>{$_("events.three")}</CardTitle>
-    </CardHeader>
+    
     <CardBody>
+      <img class="card-img" src="images/mini.jpg" alt="mini" />
+      <CardText>
+        {$_("events.three")}
+      </CardText>
       <CardText>
         Is life a little boring? Fed up of the same old view out of the window?  It’s definitely time to try something new!  
 
@@ -100,10 +105,12 @@
 <Row>
   <Col xs={12} md={4}>
   <Card class="mb-3">
-    <CardHeader>
-      <CardTitle>{$_("events.four")}</CardTitle>
-    </CardHeader>
+   
     <CardBody>
+      <img class="card-img" src="images/net.jpg" alt="net" />
+      <CardText>
+        {$_("events.four")}
+      </CardText>
       <CardText>
         Is life a little boring? Fed up of the same old view out of the window?  It’s definitely time to try something new!  
 
@@ -124,10 +131,12 @@
 
 <Col xs={12} md={4}>
   <Card class="mb-3">
-    <CardHeader>
-      <CardTitle>{$_("events.five")}</CardTitle>
-    </CardHeader>
+   
     <CardBody>
+      <img class="card-img" src="images/volunteer.jpg" alt="volunteer" />
+      <CardText>
+        {$_("events.five")}
+      </CardText>
       <CardText>
         Is life a little boring? Fed up of the same old view out of the window?  It’s definitely time to try something new!  
 
@@ -150,10 +159,12 @@
 
 <Col xs={12} md={4}>
   <Card class="mb-3">
-    <CardHeader>
-      <CardTitle>{$_("events.six")}</CardTitle>
-    </CardHeader>
+   
     <CardBody>
+      <img class="card-img" src="images/work.jpg" alt="work" />
+      <CardText>
+        {$_("events.six")}
+      </CardText>
       <CardText>
         Is life a little boring? Fed up of the same old view out of the window?  It’s definitely time to try something new!  
 
@@ -175,5 +186,11 @@
 </Container>
  
 <style>
+  .card-img {
+    
+    height: 20vw;
+    object-fit: cover; 
+}
+
  
 </style>
