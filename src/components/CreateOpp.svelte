@@ -2,6 +2,8 @@
     import OppStore from '../store/oppStore.js';
     import { createEventDispatcher } from 'svelte';
     import {Button} from 'sveltestrap';
+    import { _ } from "svelte-i18n";
+
 
 
     const dispatch = createEventDispatcher();
@@ -29,17 +31,23 @@
    
     
 </script>
-<h4>Add new Opportunity</h4>
+<h4>{$_("create.title")}</h4>
 <form on:submit|preventDefault={submitHandler}>
     <div class="form-field">
-        <label for="opp">Opportunity</label>
+        <label for="opp">{$_("create.opp")}</label>
         <input type="text" bind:value={newOpp.name} required> 
     </div>
     <div class="form-field">
-        <label for="description">description</label>
+        <label for="description">{$_("create.des")}</label>
         <input type="text" bind:value={newOpp.description} required> 
     </div>
-    <Button>Create Opp</Button>
-    <p>{msg.msg}</p>
+    <Button>{$_("create.button")}</Button>
+    <p class="msg">{msg.msg}</p>
 
 </form>
+
+<style>
+    .msg {
+        color:red;
+    }
+</style>

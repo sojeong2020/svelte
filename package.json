@@ -8,8 +8,8 @@
     "start": "sirv public --single"
   },
   "devDependencies": {
-   
     "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "postcss": "^8.4.8",
     "rollup": "^2.3.4",
@@ -26,6 +26,7 @@
     "@fullcalendar/interaction": "^5.10.1",
     "@fullcalendar/timegrid": "^5.10.1",
     "sirv-cli": "^2.0.0",
+    "svelte-i18n": "^3.3.13",
     "svelte-spa-router": "^3.2.0",
     "sveltestrap": "^5.9.0"
   }

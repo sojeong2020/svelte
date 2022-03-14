@@ -7,6 +7,7 @@ import css from 'rollup-plugin-css-only';
 
 import postcss from 'rollup-plugin-postcss';
 
+import json from "@rollup/plugin-json";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -40,6 +41,7 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		json(),
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
@@ -51,6 +53,7 @@ export default {
 		css({ output: 'bundle.css' }),
 		// for FullCalendar
         postcss(),
+		
 
 
 		// If you have external dependencies installed from

@@ -11,16 +11,19 @@
       Col
 
     } from 'sveltestrap';
+    import { _ } from "svelte-i18n";
+
 
     
 
   </script>
   <Container>
+    <h4>{$_("events.title")}</h4>
     <Row>
       <Col xs={12} md={4}>
   <Card class="mb-3 mt-4">
     <CardHeader>
-      <CardTitle>HOSTEL PLACEMENTS</CardTitle>
+      <CardTitle>{$_("events.one")}</CardTitle>
     </CardHeader>
     <CardBody>
       <CardText>
@@ -44,7 +47,7 @@
 <Col xs={12} md={4}>
   <Card class="mb-3 mt-4">
     <CardHeader>
-      <CardTitle>HOSTEL PLACEMENTS</CardTitle>
+      <CardTitle>{$_("events.two")}</CardTitle>
     </CardHeader>
     <CardBody>
       <CardText>
@@ -69,7 +72,7 @@
 <Col xs={12} md={4}>
   <Card class="mb-3 mt-4">
     <CardHeader>
-      <CardTitle>HOSTEL PLACEMENTS</CardTitle>
+      <CardTitle>{$_("events.three")}</CardTitle>
     </CardHeader>
     <CardBody>
       <CardText>
@@ -98,7 +101,7 @@
   <Col xs={12} md={4}>
   <Card class="mb-3">
     <CardHeader>
-      <CardTitle>HOSTEL PLACEMENTS</CardTitle>
+      <CardTitle>{$_("events.four")}</CardTitle>
     </CardHeader>
     <CardBody>
       <CardText>
@@ -122,7 +125,7 @@
 <Col xs={12} md={4}>
   <Card class="mb-3">
     <CardHeader>
-      <CardTitle>HOSTEL PLACEMENTS</CardTitle>
+      <CardTitle>{$_("events.five")}</CardTitle>
     </CardHeader>
     <CardBody>
       <CardText>
@@ -148,7 +151,7 @@
 <Col xs={12} md={4}>
   <Card class="mb-3">
     <CardHeader>
-      <CardTitle>HOSTEL PLACEMENTS</CardTitle>
+      <CardTitle>{$_("events.six")}</CardTitle>
     </CardHeader>
     <CardBody>
       <CardText>

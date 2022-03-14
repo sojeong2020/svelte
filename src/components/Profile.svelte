@@ -1,5 +1,6 @@
 <script>
     import {Form, FormGroup, Input, Label, Button,Container,Row,Col } from 'sveltestrap';
+    import { _ } from "svelte-i18n";
 
    
     let profile = {firstname:'',surname:'',mobile:'', email:'', date:'', gender:'' }
@@ -56,15 +57,15 @@
   
   <Container>
   <Form class="profile-form" on:submit={handleSubmit}>
-      <h4>Personal details</h4>
+      <h4>{$_("profile.title")}</h4>
     <Row>
     <Col  xs={12} md={6}>
     <FormGroup>
-        <Label for="firstname">firstname</Label>
+        <Label for="firstname">{$_("profile.name")}</Label>
         <Input
           type="text"
           name="firstname"
-          placeholder="First name"
+          placeholder="{$_("profile.name")}"
           bind:value={profile.firstname}
         />
         <div class="error">{errors.firstname}</div>
@@ -73,11 +74,11 @@
 
     <Col  xs={12} md={6}>
     <FormGroup>
-    <Label for="surname">Surname </Label>
+    <Label for="surname">{$_("profile.surname")} </Label>
     <Input
       type="text"
       name="surname"
-      placeholder="Surname"
+      placeholder="{$_("profile.surname")}"
       bind:value={profile.surname}
     />
     <div class="error">{errors.surname}</div>
@@ -89,11 +90,11 @@
     <Row>
     <Col  xs={12} md={6}>
     <FormGroup>
-    <Label for="mobile">Your mobile number</Label>
+    <Label for="mobile">{$_("profile.mobile")}</Label>
     <Input
       type="text"
       name="mobilr"
-      placeholder="mobile number"
+      placeholder="{$_("profile.mobile")}"
       bind:value={profile.mobile}
     />
     <div class="error">{errors.mobile}</div>
@@ -103,11 +104,11 @@
 
     <Col  xs={12} md={6}>
     <FormGroup>
-    <Label for="email">Your email address</Label>
+    <Label for="email">{$_("profile.email")}</Label>
     <Input
       type="email"
       name="email"
-      placeholder="email address"
+      placeholder="{$_("profile.email")}"
       bind:value={profile.email}
     />
     <div class="error">{errors.email}</div>
@@ -119,7 +120,7 @@
     <Row>
     <Col  xs={12} md={6}>
     <FormGroup>
-    <Label for="date">Your date of birth</Label>
+    <Label for="date">{$_("profile.bod")}</Label>
     <Input
       type="date"
       name="date"
@@ -131,7 +132,7 @@
 
     <Col  xs={12} md={6}>
     <FormGroup>
-    <Label for="gender">Identify your gender as</Label>
+    <Label for="gender">{$_("profile.gender")}</Label>
     <Input 
     type="select" 
     name="gender"
@@ -145,7 +146,7 @@
     </Col>
     </Row>
 
-  <Button color="success">Submit</Button>
+  <Button color="success">{$_("profile.button")}</Button>
 
 </Form>
 

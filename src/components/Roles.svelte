@@ -10,6 +10,8 @@
       CardText,
       CardTitle
     } from 'sveltestrap';
+    import { _ } from "svelte-i18n";
+
   </script>
   <Container>
       <Row>
@@ -17,26 +19,26 @@
   <Card class="mb-3 mt-4">
     <CardHeader >
         
-      <CardTitle >Basic Onboarding Roles</CardTitle>
+      <CardTitle >{$_("roles.cardFirst.title")}</CardTitle>
     
     </CardHeader>
     <CardBody>
-      <CardSubtitle>Current Status is APPROVED</CardSubtitle>
+      <CardSubtitle>{$_("roles.cardFirst.p1")}</CardSubtitle>
 
       <CardText>
-       2 Completed tasks
+        {$_("roles.cardFirst.p2")}
       </CardText>
 
       <CardText>
-       0 Started tasks
+        {$_("roles.cardFirst.p3")}
       </CardText>
 
        <CardText>
-       2 Pending tasks
+        {$_("roles.cardFirst.p4")}
        </CardText>
      
-      <a href="/">more details</a>
-      <a href="/">link</a>
+      <a href="/">{$_("roles.cardFirst.more")}</a>
+      <a href="/">{$_("roles.cardFirst.link")}</a>
     </CardBody>
   </Card>
 </Col>
@@ -45,26 +47,26 @@
   <Card class="mb-3 mt-4" >
     <CardHeader>
         
-      <CardTitle >Basic Onboarding Roles</CardTitle>
+      <CardTitle >{$_("roles.cardSecond.title")}</CardTitle>
     
     </CardHeader>
     <CardBody>
-      <CardSubtitle>Current Status is APPROVED</CardSubtitle>
+      <CardSubtitle>{$_("roles.cardSecond.p1")}</CardSubtitle>
 
       <CardText>
-       2 Completed tasks
+        {$_("roles.cardSecond.p2")}
       </CardText>
 
       <CardText>
-       0 Started tasks
+        {$_("roles.cardSecond.p3")}
       </CardText>
 
        <CardText>
-       2 Pending tasks
+        {$_("roles.cardSecond.p4")}
        </CardText>
      
-      <a href="/">more details</a>
-      <a href="/">link</a>
+      <a href="/">{$_("roles.cardSecond.more")}</a>
+      <a href="/">{$_("roles.cardSecond.link")}</a>
     </CardBody>
   </Card>
 </Col>

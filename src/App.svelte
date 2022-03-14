@@ -1,4 +1,6 @@
 <script>
+  import { setupI18n, isLocaleLoaded,locale  } from "./services/i18n";
+
 	import Router from 'svelte-spa-router';
 	import {link } from 'svelte-spa-router';
   import active from 'svelte-spa-router/active';
@@ -14,6 +16,11 @@
 	import Calendar from './components/Calendar.svelte';
 	import Footer from './components/Footer.svelte';
 
+  import { _ } from "svelte-i18n";
+
+  setupI18n({ withLocale: "en" });
+
+  
 
 	 // routes
 	 const routes = {
@@ -28,33 +35,31 @@
 
     };
 
-    const handleLocaleChange = e => {
-    e.preventDefault();
-    locale.set(e.target.value);
-  };
+  
 
 
 </script>
 
-<Navbar>
-  <div slot="lang">
-    <select on:change={handleLocaleChange}>
-      <option value="en">English</option>
-      <option value="we">Welsh</option>
-    </select>
-  </div>
-</Navbar>
+
+{#if $isLocaleLoaded}
+
+<Navbar 
+value={$locale}
+on:locale-changed={e =>
+  setupI18n({ withLocale: e.detail }) }
+/>
+ 
 <Sidebar>
 
 	<span slot="sidebar">
 		<div class="sidebar">
-	  <a href="/" class="active" use:link use:active>Home</a>
-	  <a href="/profile" class="active" use:link use:active>Profile</a>
-    <a href="/opps"  class="active" use:link use:active>Opportunities</a>
-    <a href="/createOpp"  class="active" use:link use:active>Create Opp</a>
-    <a href="/roles" class="active" use:link use:active>Roles</a>
-	  <a href="/events" class="active" use:link use:active>Events</a>
-	  <a href="/Calendar" class="active" use:link use:active>Calendar</a>
+	  <a href="/" class="active" use:link use:active>{$_("sidebar.home")}</a>
+	  <a href="/profile" class="active" use:link use:active>{$_("sidebar.profile")}</a>
+    <a href="/opps"  class="active" use:link use:active>{$_("sidebar.opps")}</a>
+    <a href="/createOpp"  class="active" use:link use:active>{$_("sidebar.create")}</a>
+    <a href="/roles" class="active" use:link use:active>{$_("sidebar.roles")}</a>
+	  <a href="/events" class="active" use:link use:active>{$_("sidebar.events")}</a>
+	  <a href="/Calendar" class="active" use:link use:active>{$_("sidebar.calendar")}</a>
 	    </div>
     </span>
 	<span slot="content">
@@ -68,6 +73,10 @@
 
 
 <Footer />
+{:else}
+  <p>Loading...</p>
+{/if}
+
 
 <style>
 
